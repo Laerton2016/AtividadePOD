@@ -22,18 +22,18 @@ public class Programa {
     public static void main(String[] args) {
         String op1 = "sum(1,2)";
         String op2 = "diff(2,1)";
-        String resposta = tentativas(op1);
+        String resposta = tentativas(op2);
         System.err.println(resposta);
     //    resposta = tentativas(op2);
     //    System.err.println(resposta);
     }
     private static String tentativas(String mensagem){
-        String resposta = envia(mensagem, PORTANODE3, HOST);
-        if (resposta.equals("ERRO")){
-            resposta = envia(mensagem, PORTANODE2, HOST);
-        }
+        String resposta = envia(mensagem, PORTANODE2, HOST);
         if (resposta.equals("ERRO")){
             resposta = envia(mensagem, PORTANODE1, HOST);
+        }
+        if (resposta.equals("ERRO")){
+            resposta = envia(mensagem, PORTANODE3, HOST);
         }
         return resposta;
     }

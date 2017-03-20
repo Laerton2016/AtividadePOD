@@ -63,7 +63,7 @@ public class ConexSocket {
                     System.out.println("Node não resolve essa operação encaminhando para node3.");
                     respota =  enviaMensagem(mensagem, PORTANODE3, HOST);
                 } catch (Exception e1) {
-                    respota = e1.getMessage();
+                    respota = "ERRO";
                 }
             }finally{
                 OutputStream out = sock.getOutputStream();
